@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Test - Al Rehela Group</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, #8B1538, #A91B47);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+        
+        .hamburger:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        .hamburger.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+        }
+        
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex !important;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                background: linear-gradient(135deg, #8B1538, #A91B47);
+                width: 280px;
+                height: 100vh;
+                text-align: left;
+                transition: left 0.3s ease;
+                padding: 80px 0 20px 0;
+                box-shadow: 2px 0 20px rgba(0,0,0,0.3);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 18px 30px;
+                font-size: 16px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(255,255,255,0.1);
+                padding-left: 40px;
+            }
+        }
+        
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Mobile Menu Test</h1>
+        
+        <div class="status" id="status">Testing...</div>
+        
+        <nav class="navbar">
+            <div class="logo">AL REHELA GROUP</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+        
+        <div id="log" style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin-top: 20px; font-family: monospace; font-size: 12px; max-height: 300px; overflow-y: auto;"></div>
+        
+        <p><strong>Instructions:</strong></p>
+        <ul>
+            <li>Resize your browser window to mobile size (less than 768px wide)</li>
+            <li>The hamburger menu should appear</li>
+            <li>Click the hamburger to open/close the menu</li>
+            <li>Check the log below for debugging information</li>
+        </ul>
+    </div>
+
+    <script>
+        // Enhanced logging
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            logDiv.innerHTML += `[${timestamp}] ${message}<br>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+        
+        // Simple and Reliable Mobile Navigation
+        (function() {
+            'use strict';
+            
+            log('Script started');
+            
+            let menuIsOpen = false;
+            
+            // Wait for DOM to be ready
+            function initMobileMenu() {
+                const hamburger = document.getElementById('hamburger');
+                const navMenu = document.getElementById('navMenu');
+                const overlay = document.getElementById('mobileMenuOverlay');
+                const status = document.getElementById('status');
+                
+                log(`Elements found: hamburger=${!!hamburger}, navMenu=${!!navMenu}, overlay=${!!overlay}`);
+                
+                if (!hamburger || !navMenu) {
+                    log('Mobile menu elements not found, retrying...');
+                    status.textContent = 'Elements not found, retrying...';
+                    status.className = 'status error';
+                    setTimeout(initMobileMenu, 100);
+                    return;
+                }
+                
+                log('Mobile menu elements found, initializing...');
+                status.textContent = 'Mobile menu initialized successfully!';
+                status.className = 'status success';
+                
+                // Toggle menu function
+                function toggleMenu() {
+                    menuIsOpen = !menuIsOpen;
+                    log(`Toggling menu: ${menuIsOpen ? 'opening' : 'closing'}`);
+                    
+                    if (menuIsOpen) {
+                        hamburger.classList.add('active');
+                        navMenu.classList.add('active');
+                        if (overlay) overlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        log('Menu opened - classes added');
+                    } else {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        if (overlay) overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                        log('Menu closed - classes removed');
+                    }
+                }
+                
+                // Close menu function
+                function closeMenu() {
+                    if (menuIsOpen) {
+                        menuIsOpen = false;
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        if (overlay) overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                        log('Menu force closed');
+                    }
+                }
+                
+                // Hamburger click event
+                hamburger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    log('Hamburger clicked!');
+                    toggleMenu();
+                });
+                
+                // Overlay click event
+                if (overlay) {
+                    overlay.addEventListener('click', function() {
+                        log('Overlay clicked');
+                        closeMenu();
+                    });
+                }
+                
+                // Navigation link clicks
+                const navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(function(link, index) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        log(`Nav link ${index + 1} clicked: ${this.textContent}`);
+                        closeMenu();
+                    });
+                });
+                
+                // Close on window resize (desktop)
+                window.addEventListener('resize', function() {
+                    log(`Window resized: ${window.innerWidth}px`);
+                    if (window.innerWidth > 768 && menuIsOpen) {
+                        log('Closing menu due to resize');
+                        closeMenu();
+                    }
+                });
+                
+                log('Mobile menu initialized successfully!');
+            }
+            
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileMenu);
+                log('Waiting for DOMContentLoaded');
+            } else {
+                log('DOM already ready, initializing immediately');
+                initMobileMenu();
+            }
+        })();
+    </script>
+</body>
+</html>
+

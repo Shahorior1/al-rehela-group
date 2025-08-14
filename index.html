@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="theme-color" content="#8B1538">
+    <title>Al Rehela Group - Trading Contracting and Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Al Rehela Group Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#brochure">BROCHURE</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#job-entry">JOB ENTRY</a></li>
+                    <li><a href="#contact">CONTACT US</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="hero-section" id="home">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>AL REHELA GROUP TRADING CONTRACTING AND SERVICES</h1>
+                    <p>Al Rehela Group is one of the leading construction companies, serving our clients with a wide range of building services and trade supplies. We have demonstrated our reliability through years of successfully completed projects across various sectors including residential, commercial, and industrial construction.</p>
+                    <div class="hero-buttons">
+                        <button class="read-more-btn" onclick="scrollToAbout()">READ MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal()">BOOK NOW</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero_image.webp">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+    <!-- Mobile Loading Indicator -->
+    <div class="mobile-loading" id="mobileLoading">Loading...</div>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Banner Image Section -->
+        <section class="banner-section">
+            <img src="images/Barahat.jpg" class="banner-img">
+            <div class="banner-text">
+                <h2>Professional Construction Services</h2>
+            </div>
+        </section>
+
+        <!-- Our Main Services Section -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <h2 class="section-title">Our Main Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="images/services/manpower.png">
+                        <h3>MANPOWER SUPPLY</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('manpower')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Manpower Supply')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/gypsum-installation.jpg">
+                        <h3>GYPSUM INSTALLATION</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('gypsum')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Gypsum Installation')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/interior.jpg" alt="Interior Design">
+                        <h3>INTERIOR DESIGN</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('interior')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Interior Design')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/electrical.jpg" alt="Electrical Works">
+                        <h3>ELECTRICAL WORKS</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('electrical')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Electrical Works')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/" alt="Civil Works">
+                        <h3>CIVIL WORKS</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('civil')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Civil Works')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/mep-1.jpg" alt="Aluminum Works">
+                        <h3>MEP WORKS</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('mep')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('MEP Works')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/painting-1.jpg">
+                        <h3>PAINTING WORKS</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('painting')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Painting Works')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/materials-supply-1.jpg" alt="Materials Supply">
+                        <h3>MATERIALS SUPPLY</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('materials')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Materials Supply')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/tiles-1.jpg">
+                        <h3>TILES AND MARBLE FIXING</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('tiles')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Tiles and Marble Fixing')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/steel-fixer-1.jpg" alt="Steel Works">
+                        <h3>STEEL WORKS</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('steel')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Steel Works')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/plaster-1.jpg" alt="Plastering">
+                        <h3>PLASTERING</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('plastering')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Plastering')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/clener.jpg" alt="Cleaning">
+                        <h3>CLEANING</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('cleaning')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Cleaning')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/Gardener-Photos.jpg" alt="Garden Clear">
+                        <h3>GARDEN CLEANER</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('garden')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Garden Cleaner')">BOOK NOW</button>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/services/OIP.webp" alt="Delivery">
+                        <h3>DELIVERY</h3>
+                        <button class="view-more-btn" onclick="openServiceModal('delivery')">VIEW MORE</button>
+                        <button class="book-now-btn" onclick="openBookingModal('Delivery')">BOOK NOW</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Projects Section -->
+        <section class="projects-section" id="projects">
+            <div class="container">
+                <h2 class="section-title">Our Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/labour-city.jpg" alt="Al Rehela Labour Accommodation">
+                        <div class="project-info">
+                            <h3>Al Rehela Labour Accommodation</h3>
+                            <p>Location: UAE</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHJlY3QgeD0iNTAiIHk9IjgwIiB3aWR0aD0iMjUwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjIiLz48cmVjdCB4PSI3MCIgeT0iNjAiIHdpZHRoPSIyMTAiIGhlaWdodD0iNDAiIGZpbGw9IiM4QjE1MzgiIGZpbGwtb3BhY2l0eT0iMC4zIi8+PHJlY3QgeD0iOTAiIHk9IjQwIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuNCIvPjx0ZXh0IHg9IjUwJSIgeT0iOTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjOEIxNTM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SZXNpZGVudGlhbCBDb21wbGV4PC90ZXh0Pjwvc3ZnPg==" alt="Residential Complex">
+                        <h3>Residential Complex</h3>
+                    </div>
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHJlY3QgeD0iMTAwIiB5PSIzMCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxODAiIGZpbGw9IiM4QjE1MzgiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PGc+PHJlY3QgeD0iMTEwIiB5PSI1MCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuNSIvPjxyZWN0IHg9IjE0MCIgeT0iNTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjUiLz48cmVjdCB4PSIxNzAiIHk9IjUwIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiM4QjE1MzgiIGZpbGwtb3BhY2l0eT0iMC41Ii8+PHJlY3QgeD0iMjAwIiB5PSI1MCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuNSIvPjxyZWN0IHg9IjIzMCIgeT0iNTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjUiLz48L2c+PHRleHQgeD0iNTAlIiB5PSI5MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM4QjE1MzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNvbW1lcmNpYWwgQnVpbGRpbmc8L3RleHQ+PC9zdmc+" alt="Commercial Building">
+                        <h3>Commercial Building</h3>
+                    </div>
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHJlY3QgeD0iNDAiIHk9IjEwMCIgd2lkdGg9IjI3MCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiM4QjE1MzgiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iODAiIHI9IjMwIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuMyIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjYwIiByPSI0MCIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjMiLz48Y2lyY2xlIGN4PSIyODAiIGN5PSI5MCIgcj0iMjUiIGZpbGw9IiM4QjE1MzgiIGZpbGwtb3BhY2l0eT0iMC4zIi8+PHRleHQgeD0iNTAlIiB5PSI5MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM4QjE1MzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkluZHVzdHJpYWwgUHJvamVjdDwvdGV4dD48L3N2Zz4=" alt="Industrial Project">
+                        <h3>Industrial Project</h3>
+                    </div>
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHBhdGggZD0iTTAgMTgwUTE3NSAxNTAgMzUwIDE4MFYyNTBIMFYxODBaIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuMiIvPjxyZWN0IHg9IjEwMCIgeT0iODAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTAwIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuMyIvPjx0ZXh0IHg9IjUwJSIgeT0iMjAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjOEIxNTM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5NYXJpbmUgUHJvamVjdDwvdGV4dD48L3N2Zz4=" alt="Marine Project">
+                        <div class="project-info">
+                            <h3>Marine Project</h3>
+                            <p>Location: UAE</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHBhdGggZD0iTTE3NSAzMEwyMDAgNjBMMjI1IDMwSDI3NVYxODBIMjVWNjBMNzUgMzBMMTAwIDYwTDEyNSAzMEwxNTAgNjBMMTc1IDMwWiIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjIiLz48cmVjdCB4PSI2MCIgeT0iMTAwIiB3aWR0aD0iNDAiIGhlaWdodD0iNjAiIGZpbGw9IiM4QjE1MzgiIGZpbGwtb3BhY2l0eT0iMC4zIi8+PHJlY3QgeD0iMTQwIiB5PSIxMDAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI2MCIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjMiLz48cmVjdCB4PSIyMjAiIHk9IjEwMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuMyIvPjx0ZXh0IHg9IjUwJSIgeT0iOTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjOEIxNTM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5WaWxsYSBDb25zdHJ1Y3Rpb248L3RleHQ+PC9zdmc+" alt="Villa Construction">
+                        <h3>Villa Construction</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section class="what-we-do-section">
+            <div class="container">
+                <h2 class="section-title">WHAT WE DO ?</h2>
+                <div class="what-we-do-grid">
+                    <div class="what-we-do-card">
+                        <div class="icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To be one of the most reputable contracting companies providing world class services to our valued customers and business partners through our qualified manpower and innovative construction technologies.</p>
+                    </div>
+                    <div class="what-we-do-card">
+                        <div class="icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To excel in every aspect of the construction business by providing the highest quality and most competitive construction services and to become the most trusted construction company in the region.</p>
+                    </div>
+                    <div class="what-we-do-card">
+                        <div class="icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Quality Assurance</h3>
+                        <p>We are committed to delivering projects of the highest quality, on time and within budget. Our quality management system ensures that every project meets international standards and exceeds client expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us-section">
+            <div class="container">
+                <h2 class="section-title">WHY CHOOSE US ?</h2>
+                <div class="why-choose-content">
+                    <div class="why-choose-text">
+                        <h3>Al Rehela Group Manpower Supply!</h3>
+                        <ul>
+                            <li><strong>Experienced Team:</strong> Our team consists of highly qualified professionals with years of experience in the construction industry.</li>
+                            <li><strong>Quality Assurance:</strong> We implement strict quality control measures to ensure that every project meets the highest standards.</li>
+                            <li><strong>Timely Delivery:</strong> We understand the importance of deadlines and strive to complete all projects on time.</li>
+                            <li><strong>Competitive Pricing:</strong> We offer competitive rates without compromising on quality or service.</li>
+                            <li><strong>Customer Satisfaction:</strong> Our priority is customer satisfaction, and we work closely with our clients to exceed their expectations.</li>
+                            <li><strong>Safety First:</strong> We maintain the highest safety standards on all our construction sites.</li>
+                            <li><strong>Innovative Solutions:</strong> We use the latest construction technologies and methods to deliver innovative solutions.</li>
+                        </ul>
+                    </div>
+                    <div class="why-choose-image">
+                        <img src="images/whychose.e4493dc9720d64f348d0.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Teams Section -->
+        <section class="teams-section">
+            <div class="container">
+                <h2 class="section-title">Our Teams</h2>
+                <div class="teams-grid">
+                    <div class="team-member">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjQwIiByPSIxNSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjQiLz48cGF0aCBkPSJNMjUgNzBRNTAgNjAgNzUgNzBWODBIMjVWNzBaIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuNCIvPjx0ZXh0IHg9IjUwJSIgeT0iOTUlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iIzhCMTUzOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QUg8L3RleHQ+PC9zdmc+" alt="Ahmed Hamoud">
+                        <h3>AHMED HAMOUD</h3>
+                        <p>Project Manager</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjQwIiByPSIxNSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjQiLz48cGF0aCBkPSJNMjUgNzBRNTAgNjAgNzUgNzBWODBIMjVWNzBaIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuNCIvPjx0ZXh0IHg9IjUwJSIgeT0iOTUlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iIzhCMTUzOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TUg8L3RleHQ+PC9zdmc+" alt="MD Hossain">
+                        <h3>MD HOSSAIN</h3>
+                        <p>Site Engineer</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjQwIiByPSIxNSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjQiLz48cGF0aCBkPSJNMjUgNzBRNTAgNjAgNzUgNzBWODBIMjVWNzBaIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuNCIvPjx0ZXh0IHg9IjUwJSIgeT0iOTUlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iIzhCMTUzOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TUE8L3RleHQ+PC9zdmc+" alt="MD Abdul Azim">
+                        <h3>MD ABDUL AZIM</h3>
+                        <p>Supervisor</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjQwIiByPSIxNSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjQiLz48cGF0aCBkPSJNMjUgNzBRNTAgNjAgNzUgNzBWODBIMjVWNzBaIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuNCIvPjx0ZXh0IHg9IjUwJSIgeT0iOTUlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iIzhCMTUzOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TUg8L3RleHQ+PC9zdmc+" alt="MD Hassan">
+                        <h3>MD HASSAN</h3>
+                        <p>Foreman</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjQwIiByPSIxNSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjQiLz48cGF0aCBkPSJNMjUgNzBRNTAgNjAgNzUgNzBWODBIMjVWNzBaIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuNCIvPjx0ZXh0IHg9IjUwJSIgeT0iOTUlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iIzhCMTUzOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RlU8L3RleHQ+PC9zdmc+" alt="Fayh Uddin">
+                        <h3>FAYH UDDIN</h3>
+                        <p>Electrician</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjQwIiByPSIxNSIgZmlsbD0iIzhCMTUzOCIgZmlsbC1vcGFjaXR5PSIwLjQiLz48cGF0aCBkPSJNMjUgNzBRNTAgNjAgNzUgNzBWODBIMjVWNzBaIiBmaWxsPSIjOEIxNTM4IiBmaWxsLW9wYWNpdHk9IjAuNCIvPjx0ZXh0IHg9IjUwJSIgeT0iOTUlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iIzhCMTUzOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TUE8L3RleHQ+PC9zdmc+" alt="Mfian Ahmed">
+                        <h3>MFIAN AHMED</h3>
+                        <p>Mason</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Statistics Section -->
+        <section class="stats-section">
+            <div class="container">
+                <h2 class="section-title">OUR ACHIEVEMENTS</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Expert Team</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Call-to-Action Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Start Your Next Project?</h2>
+                    <p>Contact Al Rehela Group today for professional construction services that exceed expectations</p>
+                    <div class="cta-buttons">
+                        <button class="cta-btn" onclick="openBookingModal()">Get Free Quote</button>
+                        <button class="cta-btn secondary" onclick="document.getElementById('contact').scrollIntoView()">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section class="social-media-section">
+            <div class="container">
+                <h2 class="section-title">FIND US ON SOCIAL MEDIA</h2>
+                <div class="social-icons">
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon telegram"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="images/logo.png" alt="Al Rehela Group Logo" class="footer-logo">
+                <div class="footer-info">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +971 XXX XXX XXX</p>
+                    <p><i class="fas fa-envelope"></i> info@alrehela.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> UAE</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-map">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTAwIiByPSI4IiBmaWxsPSIjOEIxNTM4Ii8+PHBhdGggZD0iTTEwIDUwUTE1MCAyMCAyOTAgNTAiIHN0cm9rZT0iIzhCMTUzOCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDEwMFExNTAgODAgMjUwIDEwMCIgc3Ryb2tlPSIjOEIxNTM4IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMjAgMTUwUTE1MCAxMzAgMjgwIDE1MCIgc3Ryb2tlPSIjOEIxNTM4IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48dGV4dCB4PSI1MCUiIHk9IjkwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOEIxNTM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5VQUUgTG9jYXRpb248L3RleHQ+PC9zdmc+" alt="Location Map" class="map-image">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Al Rehela Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Service Details Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="serviceModalTitle">Service Details</h2>
+                <span class="close" onclick="closeServiceModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="serviceModalBody">
+                <!-- Service details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Our Services</h2>
+                <span class="close" onclick="closeBookingModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group">
+                        <label for="clientName">Full Name *</label>
+                        <input type="text" id="clientName" name="clientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientEmail">Email Address *</label>
+                        <input type="email" id="clientEmail" name="clientEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientPhone">Phone Number *</label>
+                        <input type="tel" id="clientPhone" name="clientPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceType">Service Required *</label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="">Select a Service</option>
+                            <option value="Manpower Supply">Manpower Supply</option>
+                            <option value="Gypsum Installation">Gypsum Installation</option>
+                            <option value="Interior Design">Interior Design</option>
+                            <option value="Electrical Works">Electrical Works</option>
+                            <option value="Civil Works">Civil Works</option>
+                            <option value="MEP Works">MEP Works</option>
+                            <option value="Painting Works">Painting Works</option>
+                            <option value="Materials Supply">Materials Supply</option>
+                            <option value="Tiles and Marble Fixing">Tiles and Marble Fixing</option>
+                            <option value="Steel Works">Steel Works</option>
+                            <option value="Plastering">Plastering</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="Garden Cleaner">Garden Cleaner</option>
+                            <option value="Delivery">Delivery</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectLocation">Project Location</label>
+                        <input type="text" id="projectLocation" name="projectLocation" placeholder="City, Area">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectSize">Project Size/Scope</label>
+                        <select id="projectSize" name="projectSize">
+                            <option value="">Select Project Size</option>
+                            <option value="Small (Under 1000 sqft)">Small (Under 1000 sqft)</option>
+                            <option value="Medium (1000-5000 sqft)">Medium (1000-5000 sqft)</option>
+                            <option value="Large (5000-10000 sqft)">Large (5000-10000 sqft)</option>
+                            <option value="Commercial/Industrial">Commercial/Industrial</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">Project Urgency</label>
+                        <select id="urgency" name="urgency">
+                            <option value="">Select Urgency</option>
+                            <option value="Immediate (Within 1 week)">Immediate (Within 1 week)</option>
+                            <option value="Soon (Within 1 month)">Soon (Within 1 month)</option>
+                            <option value="Planned (1-3 months)">Planned (1-3 months)</option>
+                            <option value="Future (3+ months)">Future (3+ months)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Estimated Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select Budget Range</option>
+                            <option value="Under AED 50,000">Under AED 50,000</option>
+                            <option value="AED 50,000 - 100,000">AED 50,000 - 100,000</option>
+                            <option value="AED 100,000 - 500,000">AED 100,000 - 500,000</option>
+                            <option value="AED 500,000+">AED 500,000+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectDetails">Project Details</label>
+                        <textarea id="projectDetails" name="projectDetails" rows="4" placeholder="Please describe your project requirements in detail..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="terms" name="terms" required>
+                            I agree to the terms and conditions and privacy policy
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Quick Fix Script -->
+    <script>
+        // Immediate mobile menu fix - runs before other scripts
+        (function() {
+            function setupMobileMenu() {
+                const hamburger = document.getElementById('hamburger');
+                const navMenu = document.getElementById('navMenu');
+                const overlay = document.getElementById('mobileMenuOverlay');
+                
+                if (!hamburger || !navMenu) {
+                    console.log('Waiting for elements...');
+                    setTimeout(setupMobileMenu, 100);
+                    return;
+                }
+                
+                console.log('🍔 Mobile menu elements found!');
+                
+                let isOpen = false;
+                
+                function toggle() {
+                    isOpen = !isOpen;
+                    console.log('🔄 Toggle menu:', isOpen ? 'OPEN' : 'CLOSED');
+                    
+                    hamburger.classList.toggle('active', isOpen);
+                    navMenu.classList.toggle('active', isOpen);
+                    if (overlay) overlay.classList.toggle('active', isOpen);
+                    document.body.style.overflow = isOpen ? 'hidden' : '';
+                }
+                
+                // Multiple event types for maximum compatibility
+                hamburger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('👆 Click detected');
+                    toggle();
+                });
+                
+                hamburger.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    console.log('📱 Touch detected');
+                    toggle();
+                });
+                
+                // Close menu when clicking nav links
+                navMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (isOpen) toggle();
+                    });
+                });
+                
+                // Close when clicking overlay
+                if (overlay) {
+                    overlay.addEventListener('click', () => {
+                        if (isOpen) toggle();
+                    });
+                }
+                
+                console.log('✅ Mobile menu ready!');
+            }
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setupMobileMenu);
+            } else {
+                setupMobileMenu();
+            }
+        })();
+    </script>
+
+    <script src="professional-script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

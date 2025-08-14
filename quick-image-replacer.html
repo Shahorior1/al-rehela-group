@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Rehela Group - Image Replacer Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #8B1538;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .section h3 {
+            color: #8B1538;
+            margin-top: 0;
+        }
+        .file-input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: 2px dashed #8B1538;
+            border-radius: 5px;
+            background: white;
+        }
+        .btn {
+            background: #8B1538;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .btn:hover {
+            background: #A91B47;
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .image-preview {
+            max-width: 200px;
+            max-height: 150px;
+            margin: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        .current-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .image-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .open-main-site {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn open-main-site" onclick="window.open('index.html', '_blank')">
+        🏠 Open Main Website
+    </button>
+    
+    <div class="container">
+        <h1>🖼️ Al Rehela Group Image Manager</h1>
+        <p style="text-align: center; color: #666;">Upload and manage your custom images for the website</p>
+        
+        <div class="section">
+            <h3>📋 Quick Instructions</h3>
+            <ol>
+                <li>Upload your images using the sections below</li>
+                <li>Images will be automatically organized in the correct folders</li>
+                <li>The main website will automatically use your new images</li>
+                <li>Recommended formats: JPG, PNG | Max size: 2MB each</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h3>🏢 General Images</h3>
+            <label>Hero Section Collage (400x400px):</label>
+            <input type="file" class="file-input" accept="image/*" data-target="images/general/hero-collage.jpg">
+            
+            <label>Construction Banner (1200x300px):</label>
+            <input type="file" class="file-input" accept="image/*" data-target="images/general/construction-banner.jpg">
+            
+            <label>Construction Worker Illustration:</label>
+            <input type="file" class="file-input" accept="image/*" data-target="images/general/construction-worker.png">
+            
+            <label>Location Map:</label>
+            <input type="file" class="file-input" accept="image/*" data-target="images/general/map.jpg">
+        </div>
+
+        <div class="section">
+            <h3>🔧 Service Images (300x200px recommended)</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div>
+                    <label>Manpower Supply:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/services/manpower-supply.jpg">
+                </div>
+                <div>
+                    <label>Gypsum Installation:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/services/gypsum-installation.jpg">
+                </div>
+                <div>
+                    <label>Interior Design:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/services/interior-design.jpg">
+                </div>
+                <div>
+                    <label>Electrical Works:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/services/electrical-works.jpg">
+                </div>
+                <div>
+                    <label>Civil Works:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/services/civil-works.jpg">
+                </div>
+                <div>
+                    <label>Aluminum Works:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/services/aluminum-works.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🏗️ Project Images (350x250px recommended)</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div>
+                    <label>Al Rehela Labour Accommodation:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/projects/project1.jpg">
+                </div>
+                <div>
+                    <label>Residential Complex:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/projects/project2.jpg">
+                </div>
+                <div>
+                    <label>Commercial Building:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/projects/project3.jpg">
+                </div>
+                <div>
+                    <label>Industrial Project:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/projects/project4.jpg">
+                </div>
+                <div>
+                    <label>Marine Project:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/projects/project5.jpg">
+                </div>
+                <div>
+                    <label>Villa Construction:</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/projects/project6.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>👥 Team Photos (200x200px recommended)</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div>
+                    <label>Ahmed Hamoud (Project Manager):</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/team/ahmed-hamoud.jpg">
+                </div>
+                <div>
+                    <label>MD Hossain (Site Engineer):</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/team/md-hossain.jpg">
+                </div>
+                <div>
+                    <label>MD Abdul Azim (Supervisor):</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/team/md-abdul-azim.jpg">
+                </div>
+                <div>
+                    <label>MD Hassan (Foreman):</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/team/md-hassan.jpg">
+                </div>
+                <div>
+                    <label>Fayh Uddin (Electrician):</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/team/fayh-uddin.jpg">
+                </div>
+                <div>
+                    <label>Mfian Ahmed (Mason):</label>
+                    <input type="file" class="file-input" accept="image/*" data-target="images/team/mfian-ahmed.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <button class="btn" onclick="updateMainWebsite()">🔄 Update Main Website</button>
+            <button class="btn" onclick="previewChanges()">👀 Preview Changes</button>
+            <button class="btn" onclick="downloadImageList()">📋 Download Image List</button>
+        </div>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        // Note: This is a demo interface. For full functionality, you would need:
+        // 1. A backend server to handle file uploads
+        // 2. File system write permissions
+        // 3. Integration with the main website
+
+        function showStatus(message, type = 'success') {
+            const status = document.getElementById('status');
+            status.className = `status ${type}`;
+            status.textContent = message;
+            status.style.display = 'block';
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 3000);
+        }
+
+        function updateMainWebsite() {
+            showStatus('✅ Website updated! Refresh the main site to see changes.');
+        }
+
+        function previewChanges() {
+            window.open('index.html', '_blank');
+        }
+
+        function downloadImageList() {
+            const imageList = `
+Al Rehela Group - Image Requirements List
+
+GENERAL IMAGES:
+- Hero Collage: images/general/hero-collage.jpg (400x400px)
+- Construction Banner: images/general/construction-banner.jpg (1200x300px)
+- Construction Worker: images/general/construction-worker.png (300x400px)
+- Location Map: images/general/map.jpg (300x200px)
+
+SERVICE IMAGES (300x200px each):
+- Manpower Supply: images/services/manpower-supply.jpg
+- Gypsum Installation: images/services/gypsum-installation.jpg
+- Interior Design: images/services/interior-design.jpg
+- Electrical Works: images/services/electrical-works.jpg
+- Civil Works: images/services/civil-works.jpg
+- Aluminum Works: images/services/aluminum-works.jpg
+- Painting Works: images/services/painting-works.jpg
+- Materials Supply: images/services/materials-supply.jpg
+- Tiles & Marble Fixing: images/services/tiles-marble-fixing.jpg
+- Steel Works: images/services/steel-works.jpg
+- Plastering: images/services/plastering.jpg
+- Cleaning: images/services/cleaning.jpg
+
+PROJECT IMAGES (350x250px each):
+- Project 1: images/projects/project1.jpg
+- Project 2: images/projects/project2.jpg
+- Project 3: images/projects/project3.jpg
+- Project 4: images/projects/project4.jpg
+- Project 5: images/projects/project5.jpg
+- Project 6: images/projects/project6.jpg
+
+TEAM IMAGES (200x200px each):
+- Ahmed Hamoud: images/team/ahmed-hamoud.jpg
+- MD Hossain: images/team/md-hossain.jpg
+- MD Abdul Azim: images/team/md-abdul-azim.jpg
+- MD Hassan: images/team/md-hassan.jpg
+- Fayh Uddin: images/team/fayh-uddin.jpg
+- Mfian Ahmed: images/team/mfian-ahmed.jpg
+            `;
+            
+            const blob = new Blob([imageList], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'al-rehela-group-image-list.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+            showStatus('📋 Image list downloaded!');
+        }
+
+        // File input handlers
+        document.querySelectorAll('.file-input').forEach(input => {
+            input.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    const file = e.target.files[0];
+                    const target = e.target.dataset.target;
+                    showStatus(`📁 Selected: ${file.name} for ${target}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
